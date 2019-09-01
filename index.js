@@ -12,6 +12,7 @@ function VerifyExitsProjectID(req, res, next) {
   const { id } = req.params;
   const project = projects.find(p => p.id == id);
 
+  // verifica se existe id no projeto.
   if (!project) {
     return res.status(400).json({ error: "The project id not exits" });
   }
